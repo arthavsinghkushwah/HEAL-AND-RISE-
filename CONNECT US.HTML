@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONNECT US</title>
+</head>
+<body>
+    <style>
+body{
+            background-image: url(LOGO\ 1.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            margin: 10px;
+            width: 100%;
+            height: 100%;
+            
+            
+        }
+        #head{
+            text-align: center;
+            background-color:cadetblue;
+            font-family:'Times New Roman', Times, serif;
+            height: 150px;
+        }
+        #home{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-color: rgb(255, 255, 255);
+            width: 55px;
+            color: aliceblue;
+            
+        }
+        #about{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-color: aliceblue;
+            text-align: center;
+            width: 100px;
+        }
+        #services{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+       
+       
+        #connect{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+        }
+        footer{
+            background-color:cadetblue;
+            text-align: center;
+            margin-top:220PX;}
+            .form-container {
+            margin-left: 500px;
+            
+            padding: 20px;
+            border-radius: 8px;
+            width: 200%;
+            height: 100%;
+            max-width: 500px;
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            margin-left: 100px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display:contents;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0px;
+            
+            border-radius: 8px;
+        }
+        .form-group textarea {
+            resize:vertical;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fa2b2b;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit-btn:hover {
+            background-color: cadetblue;
+        }
+
+    </style>
+    <body>
+        <div id="head">
+            <header>
+        
+                <img id="pic1" src="LOGO.png" width="200px" style="float: left; margin-top: 8px; margin-left: 8px;border-radius: 50%;" >
+                <img id="pic2" src="LOGO.png" width="200px" style="float: right; margin-top: 8px; margin-left: 8px;border-radius: 50%;">
+    
+                <h1>HEAL AND RISE</h1>
+                <P><b>YOUR JORNEY TO A HEALTHY RECOVERY STARTS FROM HERE</b></P>
+                <nav id="para">
+                    <a href="WELCOME.HTML"><b>HOME</b></a>&nbsp;&nbsp;
+                    <A HREF="ABOUT US.HTML"><B>ABOUT US</B></A>&nbsp;&nbsp;
+                    <A href="SERVICES.HTML"><B>OUR SERVICES</B></A>&nbsp;&nbsp;
+                    
+                    
+                    <A HREF="CONNECT US.HTML"><B>CONTACT US</B></A>&nbsp;&nbsp;
+                </nav>
+            </header>
+        </div>
+        <div class="form-container">
+            <h2 style="color: aliceblue;">Home Visit Appointment Form</h2>
+            <form action="/submit-appointment" method="post">
+                <div class="form-group">
+                    <label for="full-name" style="color: aliceblue;">Full Name</label>
+                    <input type="text" id="full-name" name="full-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" style="color: aliceblue;">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" style="color: aliceblue;">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-date" style="color: aliceblue;">Preferred Appointment Date</label>
+                    <input type="date" id="appointment-date" name="appointment-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time-slot" style="color: rgb(0, 136, 255);"><b>Preferred Time Slot</b></label>
+                    <select id="time-slot" name="time-slot" required>
+                        <option value="" style="color: aliceblue;">Select a time slot</option>
+                        <option value="morning">Morning (8 AM - 12 PM)</option>
+                        <option value="afternoon">Afternoon (12 PM - 4 PM)</option>
+                        <option value="evening">Evening (4 PM - 8 PM)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="address" style="color: aliceblue;">Home Address</label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Appointment</button>
+            </form>
+        </div>
+        <footer>
+            <CENTER>&copy; ALL RIGHTS RESERVED</CENTER>
+        </footer>
+        
+
+</body>
+<script>
+    function validateForm() {
+        // Clear all error messages
+        document.getElementById("nameError").textContent = "";
+        document.getElementById("emailError").textContent = "";
+        document.getElementById("phoneError").textContent = "";
+        document.getElementById("dateError").textContent = "";
+        document.getElementById("timeSlotError").textContent = "";
+        document.getElementById("addressError").textContent = "";
+
+        let isValid = true;
+
+        // Validate Full Name
+        const name = document.getElementById("full-name").value.trim();
+        if (name === "" || name.length < 3) {
+            document.getElementById("nameError").textContent = "Please enter a valid full name (at least 3 characters).";
+            isValid = false;
+        }
+
+        // Validate Email
+        const email = document.getElementById("email").value.trim();
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            document.getElementById("emailError").textContent = "Please enter a valid email address.";
+            isValid = false;
+        }
+
+        // Validate Phone Number
+        const phone = document.getElementById("phone").value.trim();
+        const phonePattern = /^\d{10}$/;
+        if (!phonePattern.test(phone)) {
+            document.getElementById("phoneError").textContent = "Please enter a valid 10-digit phone number.";
+            isValid = false;
+        }
+
+        // Validate Appointment Date
+        const appointmentDate = document.getElementById("appointment-date").value;
+        const today = new Date().toISOString().split("T")[0];
+        if (appointmentDate === "" || appointmentDate < today) {
+            document.getElementById("dateError").textContent = "Please select a valid future date.";
+            isValid = false;
+        }
+
+        // Validate Time Slot
+        const timeSlot = document.getElementById("time-slot").value;
+        if (timeSlot === "") {
+            document.getElementById("timeSlotError").textContent = "Please select a time slot.";
+            isValid = false;
+        }
+
+        // Validate Address
+        const address = document.getElementById("address").value.trim();
+        if (address === "" || address.length < 10) {
+            document.getElementById("addressError").textContent = "Please enter a valid address (at least 10 characters).";
+            isValid = false;
+        }
+
+        return isValid;
+    }
+</script>
+</html>
